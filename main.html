@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">   
+  <meta  name="format-detection" content="telephone-no">
+  <link rel="stylesheet" href="css/index_style.css" />
+  <!-- defer属性是代表了在全局加载完毕之后，再读取js -->
+  <script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js" defer></script>
+  <script type="text/javascript" src="js/index_script.js" defer></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js" ></script>
+
+  <title>中山党建</title>
+</head>
+
+<body >
+<div id="all">
+<header class="header">
+  <div class="headerInfo" id = "haderTitle"> {{ HTitle }}</div>
+  <div v-if="seen"  v-on:click="openNew" class="add" style="float: right;height: 100%;"><img src="images/add.png" style="height: 60%;padding: 2vw"></div>
+</header>
+
+  <div id = "bodyCenter">
+    <iframe :src="bodyCenter" class="bodyC" scrolling="auto"></iframe>
+  </div>
+
+  <footer class="footer">
+   <div  v-on:click="lifeCircle" class="option">
+     <img :src="LifeImg" class="option_icon" >
+     <div class="option_name">生活圈</div>
+   </div>
+
+   <div v-on:click="learnCircle" class="option">
+     <img :src="learnImg" class="option_icon" >
+     <div class="option_name">学习圈</div>
+   </div >
+
+   <div v-on:click="BBSCircle"  class="option">
+     <img :src ="BBSImg" class="option_icon" >
+     <div class="option_name">讨论区</div>
+   </div>
+
+   <div v-on:click="MyCircle" class="option">
+     <img :src ="MeImg" class="option_icon">
+     <div class="option_name">我的</div>
+   </div>
+
+ </footer>
+ </div>
+</body>

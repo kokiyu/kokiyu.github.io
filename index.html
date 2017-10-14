@@ -1,51 +1,125 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="Zh-cn">
 <head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">   
-  <meta  name="format-detection" content="telephone-no">
-  <link rel="stylesheet" href="css/index_style.css" />
-  <!-- defer属性是代表了在全局加载完毕之后，再读取js -->
-  <script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js" defer></script>
-  <script type="text/javascript" src="js/index_script.js" defer></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js" ></script>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><meta  name="format-detection" content="telephone-no">
+	<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js"></script>
 
-  <title>中山党建</title>
+	<!-- css样式 -->
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			border: none;
+			font-size: 1.5625vw;
+			font-family: "Microsoft Yahei";
+		}
+
+		html { font-size: 62.5%; }  
+		body {  
+			margin: 0;  
+			background-image: url('images/dengluye.jpg');    
+			background-repeat:no-repeat ;
+			background-size:100% 100%; 
+			background-attachment:fixed;
+		}  
+		#img{
+			margin-top: 20%;
+			margin-left: 25%;
+			width: 53vw;
+			height: 53vw;
+		}
+
+		#img img{
+			width: 100%;
+			height: 100%:;
+		}
+
+		.title
+		{
+			margin-top: 3%;
+			color: #fec835;
+			width: 100%;
+			text-align: center;
+		}
+
+		#p1{
+			font-size: 4em;
+			font-weight:bold;
+
+		}
+		#p2{
+			margin-top: 1%;
+			font-size: 3em;
+		}
+
+		#login{
+			margin-top: 35%;
+			text-align: center;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			bottom: 0;
+		}
+
+		.button {
+			border-radius:10px;
+			color: #dd2910;
+			background-color: #fff;
+			width: 80%;
+			text-align: center;
+			margin-top:2vh;
+			margin-left: 10%;
+			height: 5vh;
+			line-height: 5vh;
+			font-size: 16px;
+		}
+
+		.button a{
+			font-size: 15px;
+			color: #dd2910;
+			text-decoration:none;
+		}
+
+		.forgetSecret{
+			margin-top:1vh;
+			color: #fb0d1c;
+			font-size:12px;
+		}
+
+	</style>
+	<title>中山党建</title>
 </head>
-
-<body >
-<div id="all">
-<header class="header">
-  <div class="headerInfo" id = "haderTitle"> {{ HTitle }}</div>
-  <div v-if="seen"  v-on:click="openNew" class="add" style="float: right;height: 100%;"><img src="images/add.png" style="height: 60%;padding: 2vw"></div>
-</header>
-
-  <div id = "bodyCenter">
-    <iframe :src="bodyCenter" class="bodyC" scrolling="auto"></iframe>
-  </div>
-
-  <footer class="footer">
-   <div  v-on:click="lifeCircle" class="option">
-     <img :src="LifeImg" class="option_icon" >
-     <div class="option_name">生活圈</div>
-   </div>
-
-   <div v-on:click="learnCircle" class="option">
-     <img :src="learnImg" class="option_icon" >
-     <div class="option_name">学习圈</div>
-   </div >
-
-   <div v-on:click="BBSCircle"  class="option">
-     <img :src ="BBSImg" class="option_icon" >
-     <div class="option_name">讨论区</div>
-   </div>
-
-   <div v-on:click="MyCircle" class="option">
-     <img :src ="MeImg" class="option_icon">
-     <div class="option_name">我的</div>
-   </div>
-
- </footer>
- </div>
+<!-- html代码 -->
+<body>
+	<div id = "img">
+		<img src="images/guohui250.png">
+	</div>
+	<div class="title">
+		<p id="p1">中山市第一人民法院</p>
+		<p id="p2">博识瑞达 笃行至善</p>
+	</div>
+	<div id="login">
+		<div v-on:click="register" class="button" >注册</div>
+		<div v-on:click="login" class="button">登录</div>
+		<div v-on:click="forgetSecret" class="forgetSecret"><u>忘记密码</u></div>
+	</div>
+	<script>
+		var app = new Vue({
+			el: '#login',
+			methods: {
+				register:function(){
+					window.location.href=("./register.html");    
+				},
+				login:function(){
+					window.location.href=("./login.html");
+				},
+				forgetSecret:function(){
+					window.location.href=("./forgetSecret.html");
+				}
+			},
+		})
+	</script>
 </body>
+</html>

@@ -35,7 +35,7 @@ var app = new Vue({
                 	document.cookie="token="+that.token; 
                 	document.cookie="name="+that.account;
                 	document.cookie ="numb="+that.user_id;
-                	window.location.href=("./index.html");
+                	window.location.href=("./main.html");
                 }
                 else{
                 	let finResult = result2.join("，");
