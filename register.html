@@ -1,0 +1,51 @@
+	<!DOCTYPE html>
+	<html lang="Zh-cn">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+		<meta  name="format-detection" content="telephone-no">
+		<meta http-equiv ='Access-Control-Allow-Origin' content='*'>
+
+		<link rel="stylesheet" href="css/register-css.css" defer/>
+		<!-- defer属性是代表了在全局加载完毕之后，再读取js -->
+        <script type="js/sms.js"></script>
+		<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js" defer></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="http://cdn.bootcss.com/blueimp-md5/1.1.0/js/md5.js"></script>  
+		<script type="text/javascript" src="js/register.js" defer></script>
+
+	</head>
+	<body>
+		<header class="header">
+			<div class="returnImg"><a href="start.html"><img src="images/return.png"></a></div>
+			<div class="headerInfo" id = "haderTitle">填写信息</div>
+		</header>
+
+		<div class="table" id = "Table">
+<!-- 			<input type="text"  class="enabled text-info" placeholder="姓名" />
+-->			
+<input v-model="name" class="enabled text-info"  placeholder="姓名" >
+<input v-model="phone"  class="enabled text-info" placeholder="手机号码" />
+
+<select  v-model="selected" class="selected"> 
+	<option disabled value="">所属办公室</option>
+	<option  v-for="(item, index) in alldata"> {{item.dept_name}}</option>
+</select> 
+
+<div id="sure">
+	<input v-model="identifyNum"  class="sured" placeholder="验证码" />
+	<div  v-show="vcodeShow" class="sureButton" v-on:click="identify">{{vcode}}</div>
+    <div  v-show="!vcodeShow" class="sureButton">{{vcode}}</div>
+
+</div>
+
+
+<input v-model="secret"  class="enabled text-info" placeholder="密码" type="password" />
+<input v-model="secretCode" class="enabled text-info" placeholder="确认密码" type="password"/>
+
+<div class="confirm" v-on:click="confirm">确认</div>
+</div>
+
+</body>
+</html>

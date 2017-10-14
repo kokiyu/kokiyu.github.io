@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">   
+<meta  name="format-detection" content="telephone-no">
+<link rel="stylesheet" href="css/lifeDetail.css" />
+<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js" defer></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="js/check-in.js" defer></script>
+
+	<link rel="stylesheet" href="css/index_style.css" />
+
+<title>签到</title>
+<style type="text/css">
+	input::-webkit-input-placeholder {
+	/* placeholder颜色  */
+	color: #8d8e8d;
+	/* placeholder字体大小  */
+	font-size: 16px;
+
+}
+#content {
+		display: flex;
+		flex-direction: column;
+		margin:0 auto;
+		width: 70%;
+	}
+
+.check-in-text{
+	margin-top: 35px;
+	font-size: 16px;
+	text-align: center;
+}
+
+.check-in-put{
+
+background-color: #fff;
+margin-top: 5px;
+padding: 15px;
+border: 1px solid #dcdcdc;
+font-size: 16px;
+
+}
+
+.button {
+	border-radius:10px;
+	color: #fff;
+	background-color: #d6091e;
+	width: 80%;
+	text-align: center;
+	margin-top:2vh;
+	margin-left: 12%;
+	height: 5vh;
+	line-height: 5vh;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+</style>
+</head>
+<body>
+	<div id="all">
+		
+		<header class="header">
+			<div class="headerInfo" id = "haderTitle">签到记录</div>
+			<img  class="returnImg" src="images/return.png"  v-on:click="onBackClick"> 
+		</header>
+
+       <div id="content">
+       	<div class="check-in-text">{{checkText}}</div>
+       	<input type="text" name="check-in" v-model="checkString" class="check-in-put" placeholder="请输入验证码" />
+       	<div class="button" v-on:click= "sure">确认</div>
+
+       </div>
+
+
+	</div>
+</body>
+</html>

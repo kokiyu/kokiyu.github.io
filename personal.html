@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><meta  name="format-detection" content="telephone-no">
+	<link rel="stylesheet" href="css/personal.css" />
+	<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js" ></script>
+	<script type="text/javascript" src="js/personal.js" defer></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+	<div id="all">
+	<header class="header">
+		<div class="returnImg"><a href="index.html"><img src="images/return.png"></a></div>
+		<div class="headerInfo" id = "haderTitle">编辑档案</div>
+		<div class="rightBUT" v-on:click="saveData">保存</div>
+	</header>
+
+	<div id="bodyCenter">
+		<div class="camera"><img src="images/camera.png" ></div>
+
+		<div class="name">
+			<p>昵称：</p>
+			<input v-model="nickname" class="enabled text-info"   />
+		</div>
+
+
+	<div class="name">
+		<p>部门选择：</p>
+		<select class="selected"> 
+			<option disabled value="">所属办公室</option>
+			<option >办公室1</option> 
+			<option >办公室2</option> 
+		</select> 
+	</div>
+
+	<div class="name">
+		<p>电话：</p>
+		<input v-model="phone" class="enabled text-info"   >
+	</div>
+
+<div class="name">
+	<p>性别：</p>
+	<input v-model="sex" class="enabled text-info"  >
+</div>
+
+
+<div class="name">
+	<p>出生年份：</p>
+	<input v-model="birthday" class="enabled text-info" >
+</div>
+
+
+<div class="name">
+	<p>学历：</p>
+	<input v-model="education" class="enabled text-info"  >
+</div>
+
+
+<div class="name">
+	<p>入职时间：</p>
+	<input v-model="hiredate" class="enabled text-info">
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><meta  name="format-detection" content="telephone-no">
+	<link rel="stylesheet" href="css/learn.css" />
+	<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js" defer></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="js/learn.js" defer></script>
+</head>
+<body style="background-color: #ececec;">
+	<div class="line">
+		<div class="box" v-for="item in alldata" v-on:click="onClick(item)" >
+			<img :src="item.image">
+			<p>{{item.title}}</p>
+		</div> 
+	</div>
+</body>
+</html>

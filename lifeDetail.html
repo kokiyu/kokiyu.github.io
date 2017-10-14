@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">   
+	<meta  name="format-detection" content="telephone-no">
+	<link rel="stylesheet" href="css/lifeDetail.css" />
+	<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js" defer></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="js/lifeDetail.js" defer></script>
+
+	<title>公告消息</title>
+</head>
+<body>
+	<div id = "all">
+		<header class="header">
+			<div class="returnImg"><a href="index.html"><img src="images/return.png"></a>
+			</div>
+			<div class="headerInfo" id = "haderTitle">公告消息</div>
+<!-- 		<div class="rightBUT">上传</div>
+-->	</header>
+<img :src="alldata.image" style ="width: 100%;" >
+<div class="content">
+	<h1>{{title}}</h1>
+	<h2>{{alldata.create_time}}</h2>
+	<textarea class="summer">{{describe}}</textarea>	
+</div>
+<div class="time">
+	<p><span class="short">开始时间 <span> <span class="month">{{start_time}} </span> <span class="minute">{{start_time2}}</span></p>
+	<p><span class="short">结束时间 </span> <span class="month">{{end_time}} </span> <span class="minute">{{end_time2}}</span></p>
+	<p><span class="short">举办地点 </span>  <span class="month">{{location}}</span></p>
+</div>
+<div class="people">
+	<p class="title2">参会人员</p>
+	<div class="item" v-for="tab in cardData">
+		<span class="name">{{tab.user_name}}</span>
+		<span class="station">{{tab.attend_status==1?"未打卡":"已打卡"}}</span>
+<!-- 	<span class="mettingTime">09:25:15</span>
+--></div>
+</div>
+<div class="notify">
+	<p class="title2">参会备注</p>
+	<textarea class="notifything">{{describe}}</textarea>
+</div>
+
+<div class="warper" >
+
+	<div id="caseBlanche">
+		<div id="rond">
+			<div id="test"></div>
+		</div>
+		<div id="load">
+			<a :href="checkinid" style="font-size: 16px;color: #fff;padding-top: 3vh; display: inline-block;text-decoration: none;">签到</a>
+		</div>
+	</div>
+</div>
+
+</div>
+
+</body>
+</html>

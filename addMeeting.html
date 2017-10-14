@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><meta  name="format-detection" content="telephone-no">
+	<link rel="stylesheet" href="css/addMeeting.css" />
+	<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+	<header class="header">
+		<div class="returnImg"><a href="index.html"><img src="images/return.png"></a></div>
+		<div class="headerInfo" id = "haderTitle">填写内容</div>
+	</header>
+	<div id = "content">
+			<input v-model="meetingName"  class="enabled text-info" placeholder="请输入会议名称" />
+			<p style="font-size: 16px;margin: 2%;color: grey;">会议简介</p>
+			<textarea class="textarea" rows="10" cols="20"></textarea>
+	</div>
+
+	<div class="time">
+	<p><span class="short">开始时间:</span> 2016-9-8 18:00 </p>
+	<p><span class="short">结束时间:</span> 2016-9-8 18:00 </p>
+	<p><span class="short">举办地点:</span> 2016-9-8 18:00 </p>
+</div>
+
+    <div class="time">
+    				<p style="font-size: 16px;margin: 2%;color: grey;">参与人员</p>
+	<p><span class="short">部门-职位-姓名<span> </p>
+	<p><span class="short">部门-职位-姓名<span> </p>
+	<p><span class="short">部门-职位-姓名<span> </p>
+	<div id = "button"><img src="images/icon_tbar_add.png" style="height: 100%;"></div>
+    </div>
+
+    <div class="notify">
+	<p style="font-size: 16px;margin: 2%;color: grey;">参会备注</p>
+	<textarea class="textarea" rows="10" cols="20">开会备注……</textarea>
+</div>
+
+<div class="confirm" v-on:click="confirm">确认</div>
+
+</body>
+</html>

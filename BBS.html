@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><meta  name="format-detection" content="telephone-no">
+	<link rel="stylesheet" href="css/BBS.css" defer/>
+	<!-- defer属性是代表了在全局加载完毕之后，再读取js -->
+	<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js" defer></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="js/BBS.js" defer></script>
+</head>
+<body>
+	<div id ="all">
+	<div class="line"  v-for="item in alldata">
+		<div class="name">{{item.title}}</div>
+		<div class="time">{{item.create_time}}  {{item.create_user_name}}发表 </div>
+		<div class="content">{{item.content}}<img :src="item.image_url"></div>
+	</div>
+	<div class="loding_but" v-on:click="addLifeCircle">
+      <p>{{loding_text}}</p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+*{
+margin: 0;
+padding: 0;
+border: none;
+font-size: 1.5625vw;
+font-family: "Microsoft Yahei";
+}
+
+html { font-size: 62.5%; }  
+body {  
+margin: 0;  
+}
+
+/*中部*/
+.line{
+border-bottom: 1px solid #dcdcdc;
+width: 100%;
+display: flex;
+flex-direction: column;
+margin-top: 2%;
+}
+
+.name{
+margin-left: 5%;
+font-size: 2em;
+}
+
+.time{
+margin-top: 3px;
+
+color: #dcdcdc;
+margin-left: 5%;
+font-size: 1em;
+}
+
+.content{
+margin-top: 5px;
+width: 90%;
+margin-left: 5%;
+font-size: 1em;
+border-bottom: 1px solid #dcdcdc;
+
+}
+
+.content img{
+width: 100%;
+margin-bottom: 2%;
+}
+
+ .loding_but{
+ 	text-align: center;
+ 	margin-top: 2vw;
+ 	height: 5vw;
+ }
+ .loding_but p{
+ 	 	font-size: 2vw;
+ }

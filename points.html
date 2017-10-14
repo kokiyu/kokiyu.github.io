@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">   
+	<meta  name="format-detection" content="telephone-no">
+
+	<link rel="stylesheet" href="css/learning.css" />
+	<link rel="stylesheet" href="css/index_style.css" />
+
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+	<title>中山党建</title>
+
+</head>
+<style type="text/css">
+.item_title{
+	color: #0000FF;
+	font-size: 18px;
+}
+.item_time{
+	font-size: 12px;
+	align-self:flex-end;
+}
+.box{
+	padding: 2vh;
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;  
+	border-bottom: 1px solid #dcdcdc;
+}
+</style>
+<div id="rootView">
+	<header class="header">
+		<div class="headerInfo" id = "haderTitle"> 积分详情</div>
+		<img  class="returnImg" src="images/return.png"  v-on:click="onBackClick"> 
+	</header>
+	<body>
+		<div class="line">
+			<div class="box" v-for="item in points" >
+				<p class="item_title">{{(item.operate?'+':'-')+item.point}}积分</p>
+				<p class="item_title">{{item.reason}}</p>
+				<p class="item_time">{{item.create_time}}</p>
+			</div> 
+		</div>
+	</body>
+</div>
+<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js"></script>
+<script type="text/javascript">
+	var app = new Vue({
+		el:'#rootView',
+		data:{
+			points:[],
+		},
+		created:function(){
+			this.fetchData();
+		},
+		methods:{
+			fetchData:function(){
+				var str= sessionStorage.getItem('SettingPoints');
+				this.points=JSON.parse(str);
+				console.log(str);
+			},
+			onBackClick:function(){
+				window.history.go(-1);
+			},
+		}
+	})
+</script>
+</html>

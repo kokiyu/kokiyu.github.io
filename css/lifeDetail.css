@@ -1,0 +1,201 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-size: 1.5625vw;
+	font-family: "Microsoft Yahei";
+}
+
+html,body
+{
+/*	overflow: hidden;
+*/}
+
+/*头部*/
+.header{
+	background-color: #c20c0c;
+	height:6vh;
+	display: flex;
+	flex-direction: row;
+}
+
+.headerInfo{
+	color: #fff;
+	width: 60%;
+	text-align: center;
+	font-size: 20px;
+	letter-spacing:0.1em;
+	padding-bottom: 1px;
+	padding:1vh 0;
+
+}
+
+.returnImg{
+	padding-top: 8px;
+	height: 100%;
+	width: 15%;
+}
+
+.returnImg a img{
+	width: 60%;
+	height: 60%;
+}
+
+.rightBUT{
+	color: #fff;
+	bottom: 0;
+	font-size: 16px;
+	padding:1.5vh 0;
+	margin-left: 8%;
+}
+
+/*会议部分*/
+.content{
+margin: 2%;
+}
+
+.content h1{
+font-size: 3em;
+font-weight: bold;
+}
+
+.content h2{
+color: #707070;
+font-size: 1em;
+}
+
+.summer{
+border:1px solid #dcdcdc;
+width: 100%;
+height: 40vh;
+font-size: 2em;
+}
+
+.time{
+margin: 2%;
+border-bottom: 1px solid #dcdcdc;
+}
+.time p{
+	height: 3vh;
+}
+
+.short{
+color: #707070;
+font-size: 2em;
+
+}
+.month{
+font-size: 2em;
+color: #000;
+}
+.minute{
+color: red;
+font-size: 2em;
+}
+
+.people{
+margin:2%;
+border-bottom:1px solid #dcdcdc;
+
+}
+.title2{
+font-size: 2.2em;
+color: grey;
+}
+.item{
+	padding: 1vw;
+}
+.name{
+display:inline-block;
+font-size: 2em;
+width: 40%;
+}
+.station{
+font-size: 2em;
+color: grey;
+	display:inline-block;
+width: 40%;
+}
+.mettingTime{
+font-size: 2em;
+color: red;
+}
+
+.notify{
+	margin: 2%;
+}
+
+.notifything{
+border:1px solid #dcdcdc;
+width: 100%;
+height: 30vh;
+font-size: 2em;
+}
+
+#caseBlanche {
+  height:100px;
+  width:100px;
+  position:absolute;
+  left:-10px;
+  top:20px;
+}
+
+#caseBlanche #load {
+  color:#fff;
+  font-family:calibri;
+  text-align:center;
+  position:absolute;
+  top :32px;
+  left :26px;
+  height:80px;
+  width:80px;
+  border-radius:40px;
+  background:#EF0707;
+  
+}
+#caseBlanche #load  p{ line-height:80px;}
+
+
+
+/****DEBUT TEST****/
+#test {
+  height:10px;
+  width:10px;
+  position:absolute;
+  background-color:#F00;
+  border-radius:50%;
+  top:0px;
+  left:10px;
+   margin:5px;
+}
+
+#rond {
+  height:100px;
+  width:100px;
+  border:1px solid #DE0A0A ;
+  border-radius:50%;
+  position:absolute;
+  top:20px;
+  left:15px;
+  animation:rond 3s infinite;
+  -webkit-animation:rond 3s infinite;
+}
+
+@keyframes rond {
+  0% {transform : rotate(0deg);}
+  100% {transform : rotate(360deg);}
+}
+
+@-webkit-keyframes rond {
+    0%{-webkit-transform : rotate(0deg);}
+  100%{-webkit-transform : rotate(360deg);}
+}
+/****第一个****/
+
+.warper { 
+    right: 15px;
+    bottom: 15px;
+	height: 40vw;
+	width: 40vw;
+     position: fixed; 
+   }

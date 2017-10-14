@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><meta  name="format-detection" content="telephone-no">
+	<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js"></script>
+	<link rel="stylesheet" href="css/login.css" />
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="js/login.js" defer></script>
+
+	<title>中山党建</title>
+</head>
+<body >
+	<div id = "body">
+	<div id = "img">
+		<img src="images/danghui250.png">
+	</div>
+	<div class="title">
+		<p id="p1">中山市第一人民法院</p>
+		<p id="p2">博识睿达 笃行至善</p>
+	</div>
+	<div class="login">
+		<input v-model="account" class="enabled text-info"  placeholder="用户名" />
+		<input v-model="password" class="enabled text-info"  placeholder="密码" type= "password" />
+	</div>
+	<div id="all">
+		<div v-on:click="login" class="button">确认</div>
+		<div v-on:click="forgetSecret" class="forgetSecret"><u>忘记密码</u></div>
+	</div>
+
+</div>
+</body>
+</html>

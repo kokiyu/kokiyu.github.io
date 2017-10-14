@@ -1,0 +1,153 @@
+/*all tag*/
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-size: 1.5625vw;
+	font-family: "Microsoft Yahei";
+}
+
+html,body
+{
+	height: 100%;
+	overflow: hidden;
+}
+
+/*头部*/
+.header{
+	background-color: #c20c0c;
+	height:6vh;
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+}
+
+.headerInfo{
+	color: #fff;
+	text-align: center;
+	font-size: 3vh;
+	letter-spacing:0.1em;
+	padding-bottom: 1px;
+	padding-top: 8px;
+	width: 100vw;
+}
+.returnImg{
+	padding-top: 8px;
+	height: 5vh;
+	width: 5vh;
+}
+
+.returnImg a img{
+	width: 60%;
+	height: 60%;
+}
+
+.table{
+	width: 100%;
+	text-align: center;
+	color: #dcdcdc;
+	display:flex;
+	flex-direction: column;
+	margin-left: 5%;
+}
+.enabled{
+	border: none;
+	padding: 2px 12px;
+	font-size: 20px;
+	line-height: 1.5;
+	border-bottom: 1px solid #dcdcdc;
+	outline: none;
+	width: 85%;
+	height: 10vh;
+}
+
+.identifyingCode{
+	border: none;
+	padding: 2px 12px;
+	font-size: 20px;
+	line-height: 1.5;
+	border-bottom: 1px solid #dcdcdc;
+	outline: none;
+	width: 60%;
+	height: 10vh;
+
+}
+
+/*.eyes{
+display: flex;
+flex-direction: row;
+}
+
+.eyes img{
+    width: 15%;
+    height: 8vh;
+    outline: none;
+    border: none;
+    padding: 2px 12px;
+    border-bottom: 1px solid #dcdcdc;
+    margin-top: 2vh;;
+}*/
+
+.selected{
+	border: none;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-size: 20px;
+	line-height: 1.5;
+	width: 90%;
+	height: 10vh;
+	background-color: #fff;
+	border-bottom: 1px solid #dcdcdc;
+
+}
+.sured{
+	border: none;
+	padding: 2px 12px;
+	font-size: 20px;
+	line-height: 1.5;
+	border-bottom: 1px solid #dcdcdc;
+	outline: none;
+	width: 50%;
+	height: 10vh;
+	float: left;
+}
+
+.sureButton{
+	border-radius:10px;
+	color: #fff;
+	background-color: #dd2910;
+	width: 32vw;
+	text-align: center;
+	height: 8vh;
+	line-height: 8vh;
+	float: left;
+	margin-left: 2%;
+	margin-top: 2vh;
+		font-size: 16px;
+
+}
+
+.sureButton a{
+	font-size: 2vh;
+	color: #fff;
+	text-decoration:none;
+}
+
+.confirm {
+	border-radius:10px;
+	color: #fff;
+	background-color: #dd2910;
+	width: 80%;
+	text-align: center;
+	margin-top:2vh;
+	margin-left: 5%;
+	height: 5vh;
+	line-height: 5vh;
+    font-size: 16px;
+}
+
+.confirm a{
+	font-size: 2.5vh;
+	color: #fff;
+	text-decoration:none;
+}

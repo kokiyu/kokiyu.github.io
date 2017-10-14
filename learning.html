@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">   
+	<meta  name="format-detection" content="telephone-no">
+	<link rel="stylesheet" href="css/index_style.css" />
+
+	<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js" defer></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script type="text/javascript" src="js/learning.js" defer></script>
+</head>
+<title>中山党建</title>
+<style type="text/css">
+
+	.item_title{
+	color: #0000FF;
+	font-size: 18px;
+}
+.item_time{
+	font-size: 12px;
+	align-self:flex-end;
+}
+.box{
+	padding: 2vw;
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;  
+	border-bottom: 1px solid #dcdcdc;
+}
+
+
+</style>
+</head>
+
+<body >
+	<div id="rootView">
+		<header class="header">
+			<div class="headerInfo" id = "haderTitle"> {{ learn.title }}</div>
+			<img  class="returnImg" src="images/return.png"  v-on:click="onBackClick"> 
+		</header>
+
+		<body>
+			<div class="line">
+				<div class="box" v-for="item in alldata" v-on:click="onClick(item)">
+					<p class="item_title">{{item.title}}</p>
+					<p class="item_time">{{item.create_time}}</p>
+				</div> 
+			</div>
+		</body>
+	</div>
+	</html>

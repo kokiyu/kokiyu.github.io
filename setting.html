@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="Zh-cn">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><meta  name="format-detection" content="telephone-no">
+
+	<!-- css样式 -->
+	<style type="text/css">
+	/*all tag*/
+	* {
+		margin: 0;
+		padding: 0;
+		border: none;
+		font-size: 1.5625vw;
+		font-family: "Microsoft Yahei";
+	}
+
+	html,body
+	{
+		height: 100%;
+		overflow: hidden;
+	}
+
+	.personal{
+		width: 100%;
+		height: 12vh;
+		border-bottom: 1px solid #dcdcdc;
+		display: flex;
+		flex-direction: row;
+
+	}
+	.shortInfo{
+		width: 100%;
+		height: 7vh;
+		border-bottom: 1px solid #dcdcdc;
+		line-height: 7vh;
+		font-size: 2.2em;
+		padding-left: 5vw;
+		color:  #7d7878;
+		letter-spacing: 0.1em;
+	}
+	.shortInfo img{
+		height: 30%;
+		float: right;
+		margin-right: 10%;
+		margin-top: 2.5vh;
+	}
+	.quit{
+		width: 80%;
+		height: 5vh;
+		line-height: 5vh;
+		border-radius: 15px;
+		background-color: #fff;
+		color: #fb0d1c;
+		text-align: center;
+		margin-top: 14vh;
+		margin-left: 10%;
+		border:1px solid red;
+		font-weight: bold;
+		letter-spacing: 1px;
+		font-size: 2.2em;
+	}
+}
+</style>
+</head>
+<body>
+	<div id="all"> 
+		<div class="info">
+			<div class="personal" v-on:click="personal1">
+				<img src="images/camera.png" style="height: 60%;margin-left: 5%;float: left;padding:2vh 0;">
+				<div id="text" style="width: 80%; padding:10px 0;margin-left: 5%;">
+					<p style="font-size: 3em">{{name}}</p>
+					<p style="color:#707070;">查看或编辑个人资料</p>
+				</div>
+				<img src="images/right.png"  style="height: 23%;float:right;margin-right: 5%;
+				margin-top:4vh;">
+			</div>
+			<div v-on:click="toNumberInfo" class="shortInfo">积分:{{points}}<img src="images/right.png"></div>
+<!-- 	<div class="shortInfo">签到记录<img src="images/right.png"></div>
+	<div class="shortInfo">我的消息<img src="images/right.png"></div> -->
+</div>
+
+<div class="quit" v-on:click="quit"> 退出当前账号</div>
+</div>
+<script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript">
+	var app = new Vue({
+		el:'#all',
+		data:{
+			name:'用户名',
+			api_url:"http://120.24.211.212:7777/v1/points",
+			points:0,
+			mData:[],
+		},
+		created:function(){
+			this.fetchData();
+		},
+		methods:{
+			fetchData:function(){
+				this.getCookie();
+				this.getNumber();
+			},
+
+			quit:function(){
+				window.top.location.href=("./start.html");
+			},
+			personal1:function(){
+				window.top.location.href=("./personal.html");
+			},
+			getNumber:function(){
+				var that=this;
+				this.axiosCreate({
+					id:this.id,
+					token:this.token,
+				})
+				.get(this.api_url)
+				.then(function(reason){
+					that.mData=reason.data.data.data;
+					that.points=0;
+					for (var i = 0; i < that.mData.length; i++) {
+						that.points+=that.mData[i].point;
+					}
+				});
+			},
+			getCookie:function(){
+				var cookie = document.cookie.split(';');
+				for(var i=0; i<cookie.length; i++) {
+					var c = cookie[i].trim().split('=');
+					if (c[0]=='id'){
+						this.id = c[1];
+					}else if (c[0]=='token') {
+						this.token = c[1];
+					}else if(c[0]=='name'){
+						this.name = c[1];
+					}
+				}
+			},
+			axiosCreate:function(headers){
+				return axios.create({
+					timeout: 1000,
+					async:true,
+					crossDomain:true,
+					headers: headers,
+				});
+			},
+			toNumberInfo:function(){
+				sessionStorage.setItem(
+					'SettingPoints',
+					JSON.stringify(this.mData)
+				);
+				window.top.location.href=("./points.html");
+			}
+		}
+	})
+</script>
+</body>
+</html>

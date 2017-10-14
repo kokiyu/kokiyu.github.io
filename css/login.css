@@ -1,0 +1,101 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-size: 1.5625vw;
+	font-family: "Microsoft Yahei";
+}
+
+html { font-size: 62.5%; }  
+body {  
+	margin: 0;  
+	background-image: url('../images/denglushouye.jpg');    
+	background-repeat:no-repeat ;
+	background-size:100% 100%; 
+	background-attachment:fixed;
+} 
+input::-webkit-input-placeholder {
+	/* placeholder颜色  */
+	color: #fff;
+	/* placeholder字体大小  */
+	font-size: 16px;
+
+}
+#img{
+	margin-top: 20%;
+	margin-left: 25%;
+	width: 50vw;
+	height: 50vw;
+}
+
+#img img{
+	width: 100%;
+	height: 100%:;
+}
+
+.title
+{
+	margin-top: 3%;
+	color: #fec835;
+	width: 100%;
+	text-align: center;
+	font-weight:bold;
+
+}
+
+#p1{
+	font-size: 4em;
+	font-weight:bold;
+
+}
+#p2{
+	margin-top: 1%;
+	font-size: 3em;
+}
+.login{
+	display: flex;
+	flex-direction: column;
+	margin-left: 12%;
+	margin-top: 15px;
+	font-weight: bold;
+}
+.enabled{
+	border: none;
+	padding: 2px 12px;
+	font-size: 20px;
+	line-height: 1.5;
+	border-bottom: 1px solid #dcdcdc;
+	outline: none;
+	width: 85%;
+	height: 10vh;
+	background-color: rgba(0,0,0,0.0);
+	color: #fff;
+}
+.button {
+	border-radius:10px;
+	color: #fff;
+	background-color: #d6091e;
+	width: 80%;
+	text-align: center;
+	margin-top:2vh;
+	margin-left: 12%;
+	height: 5vh;
+	line-height: 5vh;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+
+.forgetSecret{
+	margin-top:1vh;
+	color: #d6091e;
+	font-size:16px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.forgetSecret u{
+	font-size: 14px;
+		font-weight: bold;
+
+}
